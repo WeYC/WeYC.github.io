@@ -43,6 +43,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/3/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Eruda 手机网页前端调试面板</title>
     <url>/posts/3/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="Eruda-手机网页前端调试面板"><a href="#Eruda-手机网页前端调试面板" class="headerlink" title="Eruda 手机网页前端调试面板"></a><a href="https://github.com/liriliri/eruda"><strong>Eruda</strong> 手机网页前端调试面板</a></h1><img data-src="/posts/3/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/screenshot.jpg" class="">
@@ -77,7 +95,7 @@
   </entry>
   <entry>
     <title>OpenWrt的编译笔记</title>
-    <url>/posts/3/OpenWrt%E7%9A%84%E7%BC%96%E8%AF%91%E7%AC%94%E8%AE%B0/</url>
+    <url>/posts/4/OpenWrt%E7%9A%84%E7%BC%96%E8%AF%91%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>   OpenWrt的固件编译基于<a href="https://github.com/coolsnowwolf/lede">Lean</a>的Openwrt源码仓库进行编译。</p>
 <p>   编译方式：<u>本地编译</u>，<u><a href="https://github.com/P3TERX/Actions-OpenWrt">Github Actions</a></u> 云编译。</p>
 <hr>
@@ -188,113 +206,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/4/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>particlesJS HTML动态背景特效</title>
+    <url>/posts/4/particlesJS/</url>
+    <content><![CDATA[<p>particles.js HTML动态背景特效</p>
+<!-- particles.js container -->
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;particles-js&quot;</span> <span class="attr">style</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">  position: fixed;</span></span></span><br><span class="line"><span class="string"><span class="tag">  top: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  left: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  width: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  height: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  background-color: #2A2A30;</span></span></span><br><span class="line"><span class="string"><span class="tag">  z-index: -1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<!-- 动态背景特效 -->
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;./assets/particles/particles.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./assets/particles/app.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo安装教程</title>
-    <url>/posts/4/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>&ensp;&ensp;&ensp;&ensp;这是我折腾Hexo的记录记录需要用到的知识。</p>
-<hr>
-<ol>
-<li><p>本地运行环境配置</p>
-<ul>
-<li><p>Node.Js 10+</p>
-<ol>
-<li>安装hexo-cli  $ npm install -g hexo-cli （ -g 全局安装 ）</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<span id="more"></span>
 
-<ul>
-<li><p>Windows下安装Git程序</p>
-</li>
-<li><p><a href="www.github.com">GitHub</a>创建代码仓库 </p>
-<ol>
-<li>新建的仓库 Repository name 名称要和账号的名称一致 后面加上 github.io</li>
-</ol>
-<img data-src="/posts/4/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220107192509368.png" class="" title="新建的仓库image">
 
-<ol start="2">
-<li>选择 Pblic （公开）</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h2 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h2><ol start="2">
-<li><p>在Blog目录下 右键打开 Git Bash Here</p>
-</li>
-<li><p>输入命令$ hexo init初始化 将自动下载hexo的文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ol start="4">
-<li><p>输入命令$ npm install 下载相关依赖</p>
-</li>
-<li><p>cd到Blog目录下安装hexo-deployer-git（ 重要！用于发布到Github上 ）</p>
-<p><code>$ npm install hexo-deployer-git --save</code></p>
-</li>
-<li><p>输入命令$ hexo generate （ 简写hexo g ）生成静态文件</p>
-</li>
-<li><p>输入命令$ hexo server（ 简写hexo s ）本地运行查看效果</p>
-</li>
-<li><p>配置 _config.yml 文件</p>
-<ul>
-<li><p>在最后的deploy代码处为</p>
-<p># Deployment</p>
-<p>## Docs: <a href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line"> 	</span><br><span class="line"> 	repository: https://github.com/WeYC/WeYC.github.io.git  #代码仓库地址</span><br><span class="line"> 	</span><br><span class="line"> 	branch: main #分支</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="Git基本使用"><a href="#Git基本使用" class="headerlink" title="Git基本使用"></a>Git基本使用</h2><ul>
-<li><p>配置Git</p>
-<p>首先在本地创建<code>ssh key；</code></p>
-<p><code>$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code></p>
-</li>
-<li><p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
-</li>
-<li><p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-</li>
-<li><p>为了验证是否成功，在git bash下输入：</p>
-<p><code>$ ssh -T git@github.com</code></p>
-</li>
-</ul>
-<ul>
-<li><p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
-</li>
-<li><p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot; </span><br><span class="line">$ git config --global user.email &quot;your_email@youremail.com&quot; </span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="8">
-<li>输入命令$ hexo deploy（简写hexo d）推送到代码仓库</li>
-</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]]></content>
       <categories>
         <category>hexo</category>
+        <category>HTML背景特效</category>
+        <category>学习</category>
+        <category>HTML</category>
       </categories>
       <tags>
         <tag>学习</tag>
         <tag>hexo</tag>
+        <tag>HTML背景特效</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -397,48 +352,22 @@
       </tags>
   </entry>
   <entry>
-    <title>particlesJS</title>
-    <url>/posts/4/particlesJS/</url>
-    <content><![CDATA[<p>particles.js 测试</p>
-<!-- particles.js container -->
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;particles-js&quot;</span> <span class="attr">style</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">  position: fixed;</span></span></span><br><span class="line"><span class="string"><span class="tag">  top: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  left: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  width: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  height: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  background-color: #2A2A30;</span></span></span><br><span class="line"><span class="string"><span class="tag">  z-index: -1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<!-- 动态背景特效 -->
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;./assets/particles/particles.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./assets/particles/app.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+    <title>hexo文章内嵌HTML页面实例</title>
+    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ <span id="more"></span>
 
 ]]></content>
       <categories>
-        <category>hexo</category>
-        <category>HTML背景特效</category>
+        <category>HTML</category>
         <category>学习</category>
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>hexo</tag>
-        <tag>HTML背景特效</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -463,5 +392,97 @@
     <url>/posts/6/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9D%A1%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="Welcome-to-WeYC’s-Blog"><a href="#Welcome-to-WeYC’s-Blog" class="headerlink" title="Welcome to WeYC’s Blog"></a>Welcome to WeYC’s Blog</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">System.out.println(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">echo &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hexo安装教程</title>
+    <url>/posts/6/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>&ensp;&ensp;&ensp;&ensp;这是我折腾Hexo的记录记录需要用到的知识。</p>
+<hr>
+<ol>
+<li><p>本地运行环境配置</p>
+<ul>
+<li><p>Node.Js 10+</p>
+<ol>
+<li>安装hexo-cli  $ npm install -g hexo-cli （ -g 全局安装 ）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+<ul>
+<li><p>Windows下安装Git程序</p>
+</li>
+<li><p><a href="www.github.com">GitHub</a>创建代码仓库 </p>
+<ol>
+<li>新建的仓库 Repository name 名称要和账号的名称一致 后面加上 github.io</li>
+</ol>
+<img data-src="/posts/6/hexo%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/image-20220107192509368.png" class="" title="新建的仓库image">
+
+<ol start="2">
+<li>选择 Pblic （公开）</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h2><ol start="2">
+<li><p>在Blog目录下 右键打开 Git Bash Here</p>
+</li>
+<li><p>输入命令$ hexo init初始化 将自动下载hexo的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="4">
+<li><p>输入命令$ npm install 下载相关依赖</p>
+</li>
+<li><p>cd到Blog目录下安装hexo-deployer-git（ 重要！用于发布到Github上 ）</p>
+<p><code>$ npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>输入命令$ hexo generate （ 简写hexo g ）生成静态文件</p>
+</li>
+<li><p>输入命令$ hexo server（ 简写hexo s ）本地运行查看效果</p>
+</li>
+<li><p>配置 _config.yml 文件</p>
+<ul>
+<li><p>在最后的deploy代码处为</p>
+<p># Deployment</p>
+<p>## Docs: <a href="https://hexo.io/docs/one-command-deployment">https://hexo.io/docs/one-command-deployment</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line"> 	</span><br><span class="line"> 	repository: https://github.com/WeYC/WeYC.github.io.git  #代码仓库地址</span><br><span class="line"> 	</span><br><span class="line"> 	branch: main #分支</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Git基本使用"><a href="#Git基本使用" class="headerlink" title="Git基本使用"></a>Git基本使用</h2><ul>
+<li><p>配置Git</p>
+<p>首先在本地创建<code>ssh key；</code></p>
+<p><code>$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code></p>
+</li>
+<li><p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
+</li>
+<li><p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
+</li>
+<li><p>为了验证是否成功，在git bash下输入：</p>
+<p><code>$ ssh -T git@github.com</code></p>
+</li>
+</ul>
+<ul>
+<li><p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
+</li>
+<li><p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;your name&quot; </span><br><span class="line">$ git config --global user.email &quot;your_email@youremail.com&quot; </span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="8">
+<li>输入命令$ hexo deploy（简写hexo d）推送到代码仓库</li>
+</ol>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>
