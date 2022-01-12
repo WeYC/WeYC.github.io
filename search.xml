@@ -34,48 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Github基本使用</title>
-    <url>/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="一、与GitHub建立连接"><a href="#一、与GitHub建立连接" class="headerlink" title="一、与GitHub建立连接"></a>一、与GitHub建立连接</h2><ul>
-<li><p>配置Git</p>
-<p>首先在本地创建<code>ssh key；</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
-<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-<span id="more"></span>
-
-<p>为了验证是否成功，在git bash下输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
-<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二、上传代码到仓库"><a href="#二、上传代码到仓库" class="headerlink" title="二、上传代码到仓库"></a>二、上传代码到仓库</h2><ul>
-<li>…or create a new repository on the command line<br><code>git init</code><br><code>git add README.md</code><br><code>git commit -m &quot;first commit&quot;</code><br><code>git branch -M main</code><br><code>git remote add origin 仓库链接地址</code><br><code>git push -u origin main</code></li>
-<li>…or push an existing repository from the command line<br><code>git remote add origin 仓库链接地址</code><br><code>git branch -M main</code><br><code>git push -u origin main</code></li>
-</ul>
-<ol>
-<li><code>git init</code> 初始化本地仓库</li>
-<li><code>git add . or git add *</code> 添加要上传的文件</li>
-<li><code>git commit -m &quot;first commit&quot;</code> 添加更新说明</li>
-<li><code>git remote add origin 仓库链接地址</code> 把文件放到暂存区</li>
-<li><code>git branch -M main</code> 更改分支</li>
-<li><code>git push -u origin main</code> 上传、</li>
-<li>二次上传需要执行 <code>git add .</code> and <code>git commit -m &quot;first commit&quot;</code> 然后 <code>git push -u origin main</code></li>
-<li>如果仓库已有代码发生改变，需要先<code>git pull</code> 拉取更新，更新本地文件与仓库一直，再执行7.步骤</li>
-</ol>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenWrt的编译笔记</title>
     <url>/posts/3/OpenWrt%E7%9A%84%E7%BC%96%E8%AF%91%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>   OpenWrt的固件编译基于<a href="https://github.com/coolsnowwolf/lede">Lean</a>的Openwrt源码仓库进行编译。</p>
@@ -185,6 +143,67 @@
       <tags>
         <tag>学习</tag>
         <tag>OpenWrt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github基本使用</title>
+    <url>/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="一、与GitHub建立连接"><a href="#一、与GitHub建立连接" class="headerlink" title="一、与GitHub建立连接"></a>一、与GitHub建立连接</h2><ul>
+<li><p>配置Git</p>
+<p>首先在本地创建<code>ssh key；</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
+<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
+<span id="more"></span>
+
+<p>为了验证是否成功，在git bash下输入：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
+<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二、上传代码到仓库"><a href="#二、上传代码到仓库" class="headerlink" title="二、上传代码到仓库"></a>二、上传代码到仓库</h2><ul>
+<li>…or create a new repository on the command line<br><code>git init</code><br><code>git add README.md</code><br><code>git commit -m &quot;first commit&quot;</code><br><code>git branch -M main</code><br><code>git remote add origin 仓库链接地址</code><br><code>git push -u origin main</code></li>
+<li>…or push an existing repository from the command line<br><code>git remote add origin 仓库链接地址</code><br><code>git branch -M main</code><br><code>git push -u origin main</code></li>
+</ul>
+<ol>
+<li><code>git init</code> 初始化本地仓库</li>
+<li><code>git add . or git add *</code> 添加要上传的文件</li>
+<li><code>git commit -m &quot;first commit&quot;</code> 添加更新说明</li>
+<li><code>git remote add origin 仓库链接地址</code> 把文件放到暂存区</li>
+<li><code>git branch -M main</code> 更改分支</li>
+<li><code>git push -u origin main</code> 上传、</li>
+<li>二次上传需要执行 <code>git add .</code> and <code>git commit -m &quot;first commit&quot;</code> 然后 <code>git push -u origin main</code></li>
+<li>如果仓库已有代码发生改变，需要先<code>git pull</code> 拉取更新，更新本地文件与仓库一直，再执行7.步骤</li>
+</ol>
+]]></content>
+      <categories>
+        <category>GitHub</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo文章内嵌HTML页面实例</title>
+    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
+
+
+
+ <span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -298,25 +317,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo文章内嵌HTML页面实例</title>
-    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
-
-
-
- <span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>HTML</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo笔记</title>
     <url>/posts/4/hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​        Hexo的使用笔记</p>
@@ -418,7 +418,7 @@
   <entry>
     <title>particlesJS HTML动态背景特效</title>
     <url>/posts/5/particlesJS/</url>
-    <content><![CDATA[<p>particles.js HTML动态背景特效</p>
+    <content><![CDATA[<p><a href="https://github.com/VincentGarreau/particles.js">particles.js</a> HTML动态背景特效</p>
 <!-- particles.js container -->
 
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;particles-js&quot;</span> <span class="attr">style</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">  position: fixed;</span></span></span><br><span class="line"><span class="string"><span class="tag">  top: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  left: 0;</span></span></span><br><span class="line"><span class="string"><span class="tag">  width: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  height: 100%;</span></span></span><br><span class="line"><span class="string"><span class="tag">  background-color: #2A2A30;</span></span></span><br><span class="line"><span class="string"><span class="tag">  z-index: -1;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -457,14 +457,14 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>hexo</tag>
         <tag>HTML</tag>
+        <tag>hexo</tag>
         <tag>HTML背景特效</tag>
       </tags>
   </entry>
   <entry>
     <title>获取今日诗词</title>
-    <url>/posts/5/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/</url>
+    <url>/posts/6/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/</url>
     <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;jinrishici-sentence&quot;</span>&gt;</span>正在加载今日诗词...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot;</span> charset=<span class="string">&quot;utf-8&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -481,7 +481,7 @@
   </entry>
   <entry>
     <title>这是我的第一个条博客</title>
-    <url>/posts/5/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9D%A1%E5%8D%9A%E5%AE%A2/</url>
+    <url>/posts/7/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9D%A1%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="Welcome-to-WeYC’s-Blog"><a href="#Welcome-to-WeYC’s-Blog" class="headerlink" title="Welcome to WeYC’s Blog"></a>Welcome to WeYC’s Blog</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">System.out.println(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">echo &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
