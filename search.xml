@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Eruda 手机网页前端调试面板</title>
-    <url>/posts/2/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/</url>
-    <content><![CDATA[<h1 id="Eruda-手机网页前端调试面板"><a href="#Eruda-手机网页前端调试面板" class="headerlink" title="Eruda 手机网页前端调试面板"></a><a href="https://github.com/liriliri/eruda"><strong>Eruda</strong> 手机网页前端调试面板</a></h1><img data-src="/posts/2/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/screenshot.jpg" class="">
+    <title>Github基本使用</title>
+    <url>/posts/2/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="一、与GitHub建立连接"><a href="#一、与GitHub建立连接" class="headerlink" title="一、与GitHub建立连接"></a>一、与GitHub建立连接</h2><ul>
+<li><p>配置Git</p>
+<p>首先在本地创建<code>ssh key；</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
 
- <span id="more"></span>
+<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
+<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
+<span id="more"></span>
 
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>通过CDN使用：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;//cdn.bootcdn.net/ajax/libs/eruda/2.3.3/eruda.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span>eruda.init();<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>为了验证是否成功，在git bash下输入：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<p>通过 npm 安装：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install eruda --save</span><br></pre></td></tr></table></figure>
-
-<p>在页面中加载脚本：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;node_modules/eruda/eruda.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span>eruda.init();<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>JS 文件对于移动端来说略重（gzip 后大概 100kb）。建议通过 url 参数来控制是否加载调试器，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> src = <span class="string">&#x27;//cdn.jsdelivr.net/npm/eruda&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="regexp">/eruda=true/</span>.test(<span class="built_in">window</span>.location) &amp;&amp; <span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;active-eruda&#x27;</span>) != <span class="string">&#x27;true&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;scr&#x27;</span> + <span class="string">&#x27;ipt src=&quot;&#x27;</span> + src + <span class="string">&#x27;&quot;&gt;&lt;/scr&#x27;</span> + <span class="string">&#x27;ipt&gt;&#x27;</span>);</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;scr&#x27;</span> + <span class="string">&#x27;ipt&gt;eruda.init();&lt;/scr&#x27;</span> + <span class="string">&#x27;ipt&gt;&#x27;</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-
-<p>初始化时可以传入配置：</p>
-<ul>
-<li>container: 用于插件初始化的 Dom 元素，如果不设置，默认创建 div 作为容器直接置于 html 根结点下面。</li>
-<li>tool：指定要初始化哪些面板，默认加载所有。</li>
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
+<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> el = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(el);</span><br><span class="line"></span><br><span class="line">eruda.init(&#123;</span><br><span class="line">    <span class="attr">container</span>: el,</span><br><span class="line">    <span class="attr">tool</span>: [<span class="string">&#x27;console&#x27;</span>, <span class="string">&#x27;elements&#x27;</span>],</span><br><span class="line">    <span class="attr">useShadowDom</span>: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="二、上传代码到仓库"><a href="#二、上传代码到仓库" class="headerlink" title="二、上传代码到仓库"></a>二、上传代码到仓库</h2><ul>
+<li>…or create a new repository on the command line<br><code>git init</code><br><code>git add README.md</code><br><code>git commit -m &quot;first commit&quot;</code><br><code>git branch -M main</code><br><code>git remote add origin 仓库链接地址</code><br><code>git push -u origin main</code></li>
+<li>…or push an existing repository from the command line<br><code>git remote add origin 仓库链接地址</code><br><code>git branch -M main</code><br><code>git push -u origin main</code></li>
+</ul>
+<ol>
+<li><code>git init</code> 初始化本地仓库</li>
+<li><code>git add . or git add *</code> 添加要上传的文件</li>
+<li><code>git commit -m &quot;first commit&quot;</code> 添加更新说明</li>
+<li><code>git remote add origin 仓库链接地址</code> 把文件放到暂存区</li>
+<li><code>git branch -M main</code> 更改分支</li>
+<li><code>git push -u origin main</code> 上传、</li>
+<li>二次上传需要执行 <code>git add .</code> and <code>git commit -m &quot;first commit&quot;</code> 然后 <code>git push -u origin main</code></li>
+<li>如果仓库已有代码发生改变，需要先<code>git pull</code> 拉取更新，更新本地文件与仓库一直，再执行7.步骤</li>
+</ol>
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>GitHub</category>
       </categories>
       <tags>
         <tag>学习</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -131,7 +140,7 @@
 </ul>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONFIG_TARGET_ramips=y</span><br><span class="line">CONFIG_TARGET_ramips_mt7621=y</span><br><span class="line">CONFIG_TARGET_ramips_mt7621_DEVICE_netgear_r6220=y</span><br><span class="line">CONFIG_PACKAGE_6in4=y</span><br><span class="line">CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1</span><br><span class="line">CONFIG_PACKAGE_badblocks=y</span><br><span class="line">CONFIG_PACKAGE_bash=y</span><br><span class="line">CONFIG_PACKAGE_boost=y</span><br><span class="line">CONFIG_PACKAGE_boost-date_time=y</span><br><span class="line">CONFIG_PACKAGE_boost-program_options=y</span><br><span class="line">CONFIG_PACKAGE_boost-system=y</span><br><span class="line"># CONFIG_PACKAGE_dns2socks is not set</span><br><span class="line">CONFIG_PACKAGE_e2fsprogs=y</span><br><span class="line">CONFIG_PACKAGE_fdisk=y</span><br><span class="line">CONFIG_PACKAGE_hd-idle=y</span><br><span class="line">CONFIG_PACKAGE_ip6tables=y</span><br><span class="line">CONFIG_PACKAGE_ipt2socks=y</span><br><span class="line">CONFIG_PACKAGE_ipv6helper=y</span><br><span class="line">CONFIG_PACKAGE_kcptun-client=y</span><br><span class="line">CONFIG_PACKAGE_kcptun-config=y</span><br><span class="line">CONFIG_PACKAGE_kmod-crypto-crc32c=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-exfat=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-ext4=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-ntfs=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-vfat=y</span><br><span class="line">CONFIG_PACKAGE_kmod-ipt-nat6=y</span><br><span class="line">CONFIG_PACKAGE_kmod-iptunnel=y</span><br><span class="line">CONFIG_PACKAGE_kmod-iptunnel4=y</span><br><span class="line">CONFIG_PACKAGE_kmod-lib-crc16=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nf-nat6=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-cp437=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-iso8859-1=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-utf8=y</span><br><span class="line">CONFIG_PACKAGE_kmod-scsi-core=y</span><br><span class="line">CONFIG_PACKAGE_kmod-sit=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-ehci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-ohci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-storage=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-storage-extras=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-uhci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb2=y</span><br><span class="line">CONFIG_PACKAGE_libblkid=y</span><br><span class="line">CONFIG_PACKAGE_libbz2=y</span><br><span class="line">CONFIG_PACKAGE_libcomerr=y</span><br><span class="line">CONFIG_PACKAGE_libevdev=y</span><br><span class="line">CONFIG_PACKAGE_libexif=y</span><br><span class="line">CONFIG_PACKAGE_libext2fs=y</span><br><span class="line">CONFIG_PACKAGE_libfdisk=y</span><br><span class="line">CONFIG_PACKAGE_libffmpeg-audio-dec=y</span><br><span class="line">CONFIG_PACKAGE_libflac=y</span><br><span class="line">CONFIG_PACKAGE_libid3tag=y</span><br><span class="line">CONFIG_PACKAGE_libjpeg-turbo=y</span><br><span class="line">CONFIG_PACKAGE_libmaxminddb=y</span><br><span class="line">CONFIG_PACKAGE_libmbedtls=y</span><br><span class="line">CONFIG_PACKAGE_libncurses=y</span><br><span class="line">CONFIG_PACKAGE_libogg=y</span><br><span class="line">CONFIG_PACKAGE_libreadline=y</span><br><span class="line">CONFIG_PACKAGE_libsmartcols=y</span><br><span class="line">CONFIG_PACKAGE_libsqlite3=y</span><br><span class="line">CONFIG_PACKAGE_libss=y</span><br><span class="line">CONFIG_PACKAGE_libstdcpp=y</span><br><span class="line">CONFIG_PACKAGE_libudev-zero=y</span><br><span class="line">CONFIG_PACKAGE_libusb-1.0=y</span><br><span class="line">CONFIG_PACKAGE_libuv=y</span><br><span class="line">CONFIG_PACKAGE_libvorbis=y</span><br><span class="line">CONFIG_PACKAGE_lua-maxminddb=y</span><br><span class="line">CONFIG_PACKAGE_luasocket=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-hd-idle=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-minidlna=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-samba=y</span><br><span class="line"># CONFIG_PACKAGE_luci-app-ssr-plus is not set</span><br><span class="line"># CONFIG_PACKAGE_luci-app-unblockmusic is not set</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-minidlna-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-proto-ipv6=y</span><br><span class="line">CONFIG_PACKAGE_luci-theme-netgear=y</span><br><span class="line"># CONFIG_PACKAGE_microsocks is not set</span><br><span class="line">CONFIG_PACKAGE_minidlna=y</span><br><span class="line">CONFIG_PACKAGE_odhcp6c=y</span><br><span class="line">CONFIG_PACKAGE_odhcp6c_ext_cer_id=0</span><br><span class="line">CONFIG_PACKAGE_odhcpd-ipv6only=y</span><br><span class="line">CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0</span><br><span class="line"># CONFIG_PACKAGE_resolveip is not set</span><br><span class="line">CONFIG_PACKAGE_samba36-server=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocks-libev-ss-local=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocksr-libev-ssr-server=y</span><br><span class="line">CONFIG_PACKAGE_simple-obfs=y</span><br><span class="line"># CONFIG_PACKAGE_tcping is not set</span><br><span class="line">CONFIG_PACKAGE_terminfo=y</span><br><span class="line">CONFIG_PACKAGE_trojan=y</span><br><span class="line">CONFIG_PACKAGE_usbids=y</span><br><span class="line">CONFIG_PACKAGE_usbutils=y</span><br><span class="line">CONFIG_PACKAGE_xray-core=y</span><br><span class="line">CONFIG_PACKAGE_xray-plugin=y</span><br><span class="line">CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y</span><br><span class="line">CONFIG_SQLITE3_FTS3=y</span><br><span class="line">CONFIG_SQLITE3_FTS4=y</span><br><span class="line">CONFIG_SQLITE3_FTS5=y</span><br><span class="line">CONFIG_SQLITE3_JSON1=y</span><br><span class="line">CONFIG_SQLITE3_RTREE=y</span><br><span class="line">CONFIG_boost-compile-visibility-hidden=y</span><br><span class="line">CONFIG_boost-runtime-shared=y</span><br><span class="line">CONFIG_boost-static-and-shared-libs=y</span><br><span class="line">CONFIG_boost-variant-release=y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CONFIG_TARGET_ramips=y</span><br><span class="line">CONFIG_TARGET_ramips_mt7621=y</span><br><span class="line">CONFIG_TARGET_ramips_mt7621_DEVICE_netgear_r6220=y</span><br><span class="line">CONFIG_PACKAGE_6in4=y</span><br><span class="line">CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1</span><br><span class="line">CONFIG_PACKAGE_badblocks=y</span><br><span class="line">CONFIG_PACKAGE_bash=y</span><br><span class="line">CONFIG_PACKAGE_boost=y</span><br><span class="line">CONFIG_PACKAGE_boost-date_time=y</span><br><span class="line">CONFIG_PACKAGE_boost-program_options=y</span><br><span class="line">CONFIG_PACKAGE_boost-system=y</span><br><span class="line"># CONFIG_PACKAGE_dns2socks is not set</span><br><span class="line">CONFIG_PACKAGE_e2fsprogs=y</span><br><span class="line">CONFIG_PACKAGE_fdisk=y</span><br><span class="line">CONFIG_PACKAGE_hd-idle=y</span><br><span class="line">CONFIG_PACKAGE_ip6tables=y</span><br><span class="line">CONFIG_PACKAGE_ipt2socks=y</span><br><span class="line">CONFIG_PACKAGE_ipv6helper=y</span><br><span class="line">CONFIG_PACKAGE_kcptun-client=y</span><br><span class="line">CONFIG_PACKAGE_kcptun-config=y</span><br><span class="line">CONFIG_PACKAGE_kmod-crypto-crc32c=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-exfat=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-ext4=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-ntfs=y</span><br><span class="line">CONFIG_PACKAGE_kmod-fs-vfat=y</span><br><span class="line">CONFIG_PACKAGE_kmod-ipt-nat6=y</span><br><span class="line">CONFIG_PACKAGE_kmod-iptunnel=y</span><br><span class="line">CONFIG_PACKAGE_kmod-iptunnel4=y</span><br><span class="line">CONFIG_PACKAGE_kmod-lib-crc16=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nf-nat6=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-cp437=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-iso8859-1=y</span><br><span class="line">CONFIG_PACKAGE_kmod-nls-utf8=y</span><br><span class="line">CONFIG_PACKAGE_kmod-scsi-core=y</span><br><span class="line">CONFIG_PACKAGE_kmod-sit=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-ehci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-ohci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-storage=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-storage-extras=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb-uhci=y</span><br><span class="line">CONFIG_PACKAGE_kmod-usb2=y</span><br><span class="line">CONFIG_PACKAGE_libblkid=y</span><br><span class="line">CONFIG_PACKAGE_libbz2=y</span><br><span class="line">CONFIG_PACKAGE_libcomerr=y</span><br><span class="line">CONFIG_PACKAGE_libevdev=y</span><br><span class="line">CONFIG_PACKAGE_libexif=y</span><br><span class="line">CONFIG_PACKAGE_libext2fs=y</span><br><span class="line">CONFIG_PACKAGE_libfdisk=y</span><br><span class="line">CONFIG_PACKAGE_libffmpeg-audio-dec=y</span><br><span class="line">CONFIG_PACKAGE_libflac=y</span><br><span class="line">CONFIG_PACKAGE_libid3tag=y</span><br><span class="line">CONFIG_PACKAGE_libjpeg-turbo=y</span><br><span class="line">CONFIG_PACKAGE_libmaxminddb=y</span><br><span class="line">CONFIG_PACKAGE_libmbedtls=y</span><br><span class="line">CONFIG_PACKAGE_libncurses=y</span><br><span class="line">CONFIG_PACKAGE_libogg=y</span><br><span class="line">CONFIG_PACKAGE_libreadline=y</span><br><span class="line">CONFIG_PACKAGE_libsmartcols=y</span><br><span class="line">CONFIG_PACKAGE_libsqlite3=y</span><br><span class="line">CONFIG_PACKAGE_libss=y</span><br><span class="line">CONFIG_PACKAGE_libstdcpp=y</span><br><span class="line">CONFIG_PACKAGE_libudev-zero=y</span><br><span class="line">CONFIG_PACKAGE_libusb-1.0=y</span><br><span class="line">CONFIG_PACKAGE_libuv=y</span><br><span class="line">CONFIG_PACKAGE_libvorbis=y</span><br><span class="line">CONFIG_PACKAGE_lua-cjson=y</span><br><span class="line">CONFIG_PACKAGE_lua-maxminddb=y</span><br><span class="line">CONFIG_PACKAGE_luasocket=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-hd-idle=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-minidlna=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-samba=y</span><br><span class="line"># CONFIG_PACKAGE_luci-app-ssr-plus is not set</span><br><span class="line"># CONFIG_PACKAGE_luci-app-unblockmusic is not set</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y</span><br><span class="line">CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-minidlna-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-samba-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-i18n-vssr-zh-cn=y</span><br><span class="line">CONFIG_PACKAGE_luci-proto-ipv6=y</span><br><span class="line">CONFIG_PACKAGE_luci-theme-mcat=y</span><br><span class="line"># CONFIG_PACKAGE_microsocks is not set</span><br><span class="line">CONFIG_PACKAGE_minidlna=y</span><br><span class="line">CONFIG_PACKAGE_odhcp6c=y</span><br><span class="line">CONFIG_PACKAGE_odhcp6c_ext_cer_id=0</span><br><span class="line">CONFIG_PACKAGE_odhcpd-ipv6only=y</span><br><span class="line">CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0</span><br><span class="line"># CONFIG_PACKAGE_resolveip is not set</span><br><span class="line">CONFIG_PACKAGE_samba36-server=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocks-libev-ss-local=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y</span><br><span class="line">CONFIG_PACKAGE_shadowsocksr-libev-ssr-server=y</span><br><span class="line">CONFIG_PACKAGE_simple-obfs=y</span><br><span class="line"># CONFIG_PACKAGE_tcping is not set</span><br><span class="line">CONFIG_PACKAGE_terminfo=y</span><br><span class="line">CONFIG_PACKAGE_trojan=y</span><br><span class="line">CONFIG_PACKAGE_usbids=y</span><br><span class="line">CONFIG_PACKAGE_usbutils=y</span><br><span class="line">CONFIG_PACKAGE_xray-core=y</span><br><span class="line">CONFIG_PACKAGE_xray-plugin=y</span><br><span class="line">CONFIG_SQLITE3_DYNAMIC_EXTENSIONS=y</span><br><span class="line">CONFIG_SQLITE3_FTS3=y</span><br><span class="line">CONFIG_SQLITE3_FTS4=y</span><br><span class="line">CONFIG_SQLITE3_FTS5=y</span><br><span class="line">CONFIG_SQLITE3_JSON1=y</span><br><span class="line">CONFIG_SQLITE3_RTREE=y</span><br><span class="line">CONFIG_boost-compile-visibility-hidden=y</span><br><span class="line">CONFIG_boost-runtime-shared=y</span><br><span class="line">CONFIG_boost-static-and-shared-libs=y</span><br><span class="line">CONFIG_boost-variant-release=y</span><br></pre></td></tr></table></figure>
 
 
 
@@ -146,64 +155,36 @@
       </tags>
   </entry>
   <entry>
-    <title>Github基本使用</title>
-    <url>/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="一、与GitHub建立连接"><a href="#一、与GitHub建立连接" class="headerlink" title="一、与GitHub建立连接"></a>一、与GitHub建立连接</h2><ul>
-<li><p>配置Git</p>
-<p>首先在本地创建<code>ssh key；</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
-<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-<span id="more"></span>
-
-<p>为了验证是否成功，在git bash下输入：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
-<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二、上传代码到仓库"><a href="#二、上传代码到仓库" class="headerlink" title="二、上传代码到仓库"></a>二、上传代码到仓库</h2><ul>
-<li>…or create a new repository on the command line<br><code>git init</code><br><code>git add README.md</code><br><code>git commit -m &quot;first commit&quot;</code><br><code>git branch -M main</code><br><code>git remote add origin 仓库链接地址</code><br><code>git push -u origin main</code></li>
-<li>…or push an existing repository from the command line<br><code>git remote add origin 仓库链接地址</code><br><code>git branch -M main</code><br><code>git push -u origin main</code></li>
-</ul>
-<ol>
-<li><code>git init</code> 初始化本地仓库</li>
-<li><code>git add . or git add *</code> 添加要上传的文件</li>
-<li><code>git commit -m &quot;first commit&quot;</code> 添加更新说明</li>
-<li><code>git remote add origin 仓库链接地址</code> 把文件放到暂存区</li>
-<li><code>git branch -M main</code> 更改分支</li>
-<li><code>git push -u origin main</code> 上传、</li>
-<li>二次上传需要执行 <code>git add .</code> and <code>git commit -m &quot;first commit&quot;</code> 然后 <code>git push -u origin main</code></li>
-<li>如果仓库已有代码发生改变，需要先<code>git pull</code> 拉取更新，更新本地文件与仓库一直，再执行7.步骤</li>
-</ol>
-]]></content>
-      <categories>
-        <category>GitHub</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo文章内嵌HTML页面实例</title>
-    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
-
-
+    <title>Eruda 手机网页前端调试面板</title>
+    <url>/posts/3/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/</url>
+    <content><![CDATA[<h1 id="Eruda-手机网页前端调试面板"><a href="#Eruda-手机网页前端调试面板" class="headerlink" title="Eruda 手机网页前端调试面板"></a><a href="https://github.com/liriliri/eruda"><strong>Eruda</strong> 手机网页前端调试面板</a></h1><img data-src="/posts/3/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/screenshot.jpg" class="">
 
  <span id="more"></span>
 
+<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>通过CDN使用：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;//cdn.bootcdn.net/ajax/libs/eruda/2.3.3/eruda.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span>eruda.init();<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>通过 npm 安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install eruda --save</span><br></pre></td></tr></table></figure>
+
+<p>在页面中加载脚本：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;node_modules/eruda/eruda.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span>eruda.init();<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>JS 文件对于移动端来说略重（gzip 后大概 100kb）。建议通过 url 参数来控制是否加载调试器，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> src = <span class="string">&#x27;//cdn.jsdelivr.net/npm/eruda&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="regexp">/eruda=true/</span>.test(<span class="built_in">window</span>.location) &amp;&amp; <span class="built_in">localStorage</span>.getItem(<span class="string">&#x27;active-eruda&#x27;</span>) != <span class="string">&#x27;true&#x27;</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;scr&#x27;</span> + <span class="string">&#x27;ipt src=&quot;&#x27;</span> + src + <span class="string">&#x27;&quot;&gt;&lt;/scr&#x27;</span> + <span class="string">&#x27;ipt&gt;&#x27;</span>);</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;scr&#x27;</span> + <span class="string">&#x27;ipt&gt;eruda.init();&lt;/scr&#x27;</span> + <span class="string">&#x27;ipt&gt;&#x27;</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p>初始化时可以传入配置：</p>
+<ul>
+<li>container: 用于插件初始化的 Dom 元素，如果不设置，默认创建 div 作为容器直接置于 html 根结点下面。</li>
+<li>tool：指定要初始化哪些面板，默认加载所有。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> el = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(el);</span><br><span class="line"></span><br><span class="line">eruda.init(&#123;</span><br><span class="line">    <span class="attr">container</span>: el,</span><br><span class="line">    <span class="attr">tool</span>: [<span class="string">&#x27;console&#x27;</span>, <span class="string">&#x27;elements&#x27;</span>],</span><br><span class="line">    <span class="attr">useShadowDom</span>: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>HTML</category>
         <category>学习</category>
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -223,6 +204,25 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hexo文章内嵌HTML页面实例</title>
+    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
+
+
+
+ <span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>HTML</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo安装教程</title>
@@ -464,7 +464,7 @@
   </entry>
   <entry>
     <title>获取今日诗词</title>
-    <url>/posts/6/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/</url>
+    <url>/posts/5/%E4%BB%8A%E6%97%A5%E8%AF%97%E8%AF%8D/</url>
     <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;jinrishici-sentence&quot;</span>&gt;</span>正在加载今日诗词...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot;</span> charset=<span class="string">&quot;utf-8&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
@@ -481,7 +481,7 @@
   </entry>
   <entry>
     <title>这是我的第一个条博客</title>
-    <url>/posts/7/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9D%A1%E5%8D%9A%E5%AE%A2/</url>
+    <url>/posts/5/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9D%A1%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="Welcome-to-WeYC’s-Blog"><a href="#Welcome-to-WeYC’s-Blog" class="headerlink" title="Welcome to WeYC’s Blog"></a>Welcome to WeYC’s Blog</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">System.out.println(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">echo &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
