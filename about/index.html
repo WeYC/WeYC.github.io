@@ -30,8 +30,8 @@
 <meta property="og:site_name" content="WYC&#39;s Blog">
 <meta property="og:description" content="var obj     function getHttp() {       var xhr &#x3D; new XMLHttpRequest();       url &#x3D; &quot;http:&#x2F;&#x2F;v1.hitokoto.cn&#x2F;&quot;;       xhr.open(&quot;GET&quot;, url, false);       xhr.send();       console.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-17T13:38:56.245Z">
-<meta property="article:modified_time" content="2022-01-17T13:38:56.245Z">
+<meta property="article:published_time" content="2022-01-17T13:41:29.853Z">
+<meta property="article:modified_time" content="2022-01-17T13:41:29.853Z">
 <meta property="article:author" content="WYC">
 <meta name="twitter:card" content="summary">
 
@@ -242,16 +242,10 @@
       smartBackspace: true
     };
     obj = getHttp()
-    var len = ""
-    len = obj.hitokoto
-    var nbsp = " "
-    for (var i = 0; i < len.length * 2; i++) {
-      nbsp = nbsp + " "
-    }
     if (obj.from_who != null) {
-      options.strings.push('\“' + obj.hitokoto + '^2000' + "\n" + nbsp + "\”—— " + obj.from_who)
+      options.strings.push('\“' + obj.hitokoto  + "\”^2000—— " + obj.from_who)
     } else {
-      options.strings.push('\“' + obj.hitokoto + '^2000' + "\”\n" + nbsp + "—— " + obj.from)
+      options.strings.push('\“' + obj.hitokoto  + "\”^2000—— " + obj.from)
     }
     var typed = new Typed('#typed', options);
   </script>
