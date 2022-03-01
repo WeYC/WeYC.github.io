@@ -487,9 +487,106 @@
   </entry>
   <entry>
     <title>Hello Hexo</title>
-    <url>/posts/6/Hello-Hexo/</url>
-    <content><![CDATA[ <span id="more"></span>
-
+    <url>/posts/7/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/</url>
+    <content><![CDATA[<h1 id="搭建青龙面板"><a href="#搭建青龙面板" class="headerlink" title="搭建青龙面板"></a>搭建<a href="https://github.com/whyour/qinglong">青龙面板</a></h1><ol>
+<li><h2 id="安装Docker容器"><a href="#安装Docker容器" class="headerlink" title="安装Docker容器"></a>安装Docker容器</h2></li>
+<li><h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -dit \</span><br><span class="line">  -v <span class="variable">$PWD</span>/ql:/ql/data \</span><br><span class="line">  -p 5700:5700 \</span><br><span class="line">  --name qinglong \</span><br><span class="line">  --hostname qinglong \</span><br><span class="line">  --restart unless-stopped \</span><br><span class="line">  whyour/qinglong:latest</span><br></pre></td></tr></table></figure></li>
+<li><h2 id="docker-compose-部署"><a href="#docker-compose-部署" class="headerlink" title="docker-compose 部署"></a>docker-compose 部署</h2><ol>
+<li><p>docker-compose 安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure></li>
+<li><p>启动容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir qinglong</span><br><span class="line">wget https://raw.githubusercontent.com/whyour/qinglong/master/docker/docker-compose.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">docker-compose up -d</span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">docker-compose down</span><br></pre></td></tr></table></figure></li>
+</ol>
+ <span id="more"></span></li>
+<li><h2 id="青龙面板拉取常用脚本-JD签到"><a href="#青龙面板拉取常用脚本-JD签到" class="headerlink" title="青龙面板拉取常用脚本(JD签到)"></a>青龙面板拉取常用脚本(JD签到)</h2><p><a href="https://www.kejiwanjia.com/">转载自科技玩家</a></p>
+<p>如何拉库：</p>
+<p><code>ql repo &lt;repourl&gt; &lt;path&gt; &lt;blacklist&gt; &lt;dependence&gt; &lt;branch&gt;</code></p>
+<p>对应意思 “库地址” “拉哪些” “不拉哪些” “依赖文件” “分支”</p>
+<p>拉取单个脚本：</p>
+<p><code>ql raw &lt;fileurl&gt;</code></p>
+<p>使用方法：</p>
+<p>一、添加库：进入面板-右上角“定时任务”-分别填入相关信息。提供个人设置，给大家参考。其中人物名、任务定时可自定义。<br>二、运行库任务添加脚本：分别点击每个库的运行按钮，稍等一下，让它飞一会儿。然后刷新页面，就能看到库的脚本了。</p>
+<p>拉库出现的问题及解决方案</p>
+<p>1.出现这种错误：</p>
+<p><code>Cannot find module &#39;xxxx&#39;</code></p>
+<p>依赖不完整，解决方法：</p>
+<p><code>docker exec -it qinglong(容器名称) bashcd /ql/scripts/pnpm install &#39;xxxx&#39;npm install &#39;xxxx&#39;</code></p>
+<p>这两个安装命令都可以用.</p>
+<p>2.出现这种错误：</p>
+<p><code>Cannot find module &#39;./xxxx&#39;</code></p>
+<p>那就很有是拉库命令不完整，请检查或复制完整的拉库命令。</p>
+<p>部分需要的依赖：自行安装</p>
+<p><code>&quot;npm install -g npm&quot;&quot;pip3 install requests&quot;&quot;pip3 install pytz&quot;&quot;npm install -g download&quot;&quot;pnpm install jsdom&quot;&quot;apk add --no-cache build-base g++ cairo-dev pango-dev giflib-dev &amp;&amp; cd scripts &amp;&amp; npm install canvas png-js md5 date-fns axios crypto-js tslib ts-md5 @types/node --build-from-source&quot;</code></p>
+<p>截止2021年12月4日目前还在维护的仓库推荐使用下方两个库，一个日常任务一个开卡 。</p>
+<p>拉库命令：</p>
+<p><code>//国内鸡：ql repo https://ghproxy.com/github.com/KingRan/JDJB.git &quot;jd_|jx_|jdCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function|sendNotify|ql|JDJR&quot;//国外鸡：ql repo https://github.com/KingRan/JDJB.git &quot;jd_|jx_|jdCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function|sendNotify|ql|JDJR&quot;</code></p>
+<p>smiek2221开卡库：</p>
+<p><code>//国外鸡：ql repo https://github.com/smiek2221/scripts.git &quot;jd_|gua_&quot; &quot;&quot; &quot;ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js&quot;//国内鸡：ql repo https://ghproxy.com/github.com/smiek2221/scripts.git &quot;jd_|gua_&quot; &quot;&quot; &quot;ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js&quot;</code></p>
+<p>ccwav大佬的资产通知增强版和CK检测（推荐使用）</p>
+<p><code>//不包含sendNotify:ql repo https://github.com/ccwav/QLScript2.git &quot;jd_&quot; &quot;sendNotify|NoUsed&quot; &quot;ql&quot;//包含sendNotify:ql repo https://github.com/ccwav/QLScript2.git &quot;jd_&quot; &quot;NoUsed&quot; &quot;ql|sendNotify&quot;</code></p>
+<p>wskey转换来源于Zy143L大佬（不上传，推荐）</p>
+<p><code>//完美网络用户：ql repo https://github.com/Zy143L/wskey.git &quot;wskey&quot;//国内网络用户：ql repo https://ghproxy.com/github.com/Zy143L/wskey.git &quot;wskey</code></p>
+<p>zero205大佬更新拉库命令（更新频繁，内置作者助力）</p>
+<p><code>ql repo https://github.com/zero205/JD_tencent_scf.git &quot;jd_|jx_|getJDCookie&quot; &quot;backUp|icon&quot; &quot;^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR&quot;&quot;main&quot;</code></p>
+<p>京东保价、汽车兑换等</p>
+<p><code>//国内鸡 ql repo https://ghproxy.com/github.com/KingRan/JD-Scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils|function&quot; //国外鸡 ql repo https://github.com/KingRan/JD-Scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_</code>]|USER|utils|function” </p>
+<p>yuannian1112拉取仓库命令：</p>
+<p><code>//国内鸡 ql repo https://hub.fastgit.org/yuannian1112/jd_scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils&quot; //国外鸡 ql repo https://github.com/yuannian1112/jd_scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|utils&quot; //v4修改默认库为 https://hub.fastgit.org/yuannian1112/jd_scripts.git //分支修改为main</code></p>
+<p>star261 粉丝互动</p>
+<p><code>ql repo https://github.com/star261/jd.git &quot;scripts|jd&quot; &quot;&quot; &quot;&quot; &quot;main&quot;</code></p>
+<p><code>chinnkarahoi 无维护，原版</code></p>
+<p><code>ql repo https://github.com/chinnkarahoi/jd_scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp|Coupon&quot; &quot;^jd[^_]|USER&quot;</code></p>
+<p>JDHelloWorld 基本天天有更新,但是采用TS脚本让初学者不友好</p>
+<p><code>ql repo https://github.com/JDHelloWorld/jd_scripts.git &quot;jd_|jx_|getCookie&quot; &quot;activity|backUp|Coupon|enen|update&quot; &quot;^jd[^_]|USER|tools&quot;</code></p>
+<p>柠檬panghu 已经跑路</p>
+<p><code>ql repo https://github.com/panghu999/jd_scripts.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp|jd_delCoupon|format_&quot; &quot;^jd[^_]|USER&quot;</code></p>
+<p>he1pu 有更新</p>
+<p><code>ql repo https://github.com/he1pu/JDHelp.git &quot;jd_|jx_|getJDCookie&quot; &quot;activity|backUp|jd_delCoupon&quot; &quot;^jd[^_]|USER&quot;</code></p>
+<p>shufflewzc 集合目前能用的脚本有更新</p>
+<p><code>ql repo https://github.com/shufflewzc/faker2.git &quot;jd_|jx_|jddj_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|ZooFaker_Necklace|JDJRValidator_Pure|sign_graphics_validate&quot;</code></p>
+<p>Annyoo2021 lxk最终版及搬运整理 集合目前能用的脚本 推荐</p>
+<p><code>ql repo https://github.com/Annyoo2021/scripts.git &quot;jd_|jx_|long_|getJDCookie&quot; &quot;activity|backUp&quot; &quot;^jd[^_]|USER|ZooFaker_Necklace|JDJRValidator_Pure|JDJRValidator&quot; &quot;main</code></p>
+<p>smiek2221仓库<br><a href="https://github.com/smiek2221/scripts">https://github.com/smiek2221/scripts</a></p>
+<p>Tsukasa007仓库<br><a href="https://github.com/Tsukasa007/my_script/tree/master">https://github.com/Tsukasa007/my_script/tree/master</a></p>
+<p>同步上游各个大佬的仓库 相当于合集<br><a href="https://github.com/DovFork">https://github.com/DovFork</a></p>
+<p>更新7.7最新仓库：（仅提供地址，拉取请参照下面）</p>
+<p>树叶shuye72仓库<br><a href="https://github.com/wuzhi04/MyActions">https://github.com/wuzhi04/MyActions</a></p>
+<p>Annyoo2021仓库 基本天天更新，集合了大量可用脚本<br><a href="https://github.com/Annyoo2021/scripts">https://github.com/Annyoo2021/scripts</a></p>
+<p>lukesyy仓库<br><a href="https://github.com/lukesyy/jd_yun">https://github.com/lukesyy/jd_yun</a></p>
+<p>zero205仓库<br><a href="https://github.com/zero205/JD_tencent_scf">https://github.com/zero205/JD_tencent_scf</a></p>
+<p>curtinlv仓库<br>ql repo <a href="https://github.com/curtinlv/JD-Script.git">https://github.com/curtinlv/JD-Script.git</a> </p>
+<p>he1pu互助仓库<br>ql repo <a href="https://github.com/he1pu/JDHelp.git">https://github.com/he1pu/JDHelp.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon” “^jd[^_]|USER” </p>
+<p>柠檬（胖虎）代维护lxk0301仓库 已经跑路<br>ql repo <a href="https://github.com/panghu999/jd_scripts.git">https://github.com/panghu999/jd_scripts.git</a> “jd_|jx_|getJDCookie” “activity|backUp|Coupon|jd_try|format_” “^jd[^_]|USER” </p>
+<p>zcy01仓库<br>ql repo <a href="https://github.com/ZCY01/daily_scripts.git">https://github.com/ZCY01/daily_scripts.git</a> “jd_” _</p>
+<p><em>passerby-b 仓库<br>ql repo <a href="https://github.com/passerby-b/JDDJ.git">https://github.com/passerby-b/JDDJ.git</a> “jddj</em>“ “scf_test_event|jddj_fruit_code.js|jddj_getck.js|jd_|jddj_cookie” _</p>
+<p><em>JDHelloWorld仓库<br>ql repo <a href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a> “jd</em>|jx_|getJDCookie” “activity|backUp|Coupon|enen|update” “^jd[^_]|USER” </p>
+<p>jiulan仓库<br>ql repo <a href="https://github.com/jiulan/platypus.git">https://github.com/jiulan/platypus.git</a> </p>
+<p>Ariszy（Zhiyi-N）仓库<br>ql repo <a href="https://github.com/Ariszy/Private-Script.git">https://github.com/Ariszy/Private-Script.git</a> “JD” </p>
+<p>柠檬（胖虎）仓库<br>ql repo <a href="https://github.com/panghu999/panghu.git">https://github.com/panghu999/panghu.git</a> “jd_” </p>
+<p>混沌仓库<br>ql repo <a href="https://github.com/whyour/hundun.git">https://github.com/whyour/hundun.git</a> “quanx” “tokens|caiyun|didi|donate|fold|Env|.py” </p>
+<p>moposmall仓库<br>ql repo <a href="https://github.com/moposmall/Script.git">https://github.com/moposmall/Script.git</a> “jx_mc|cfd.js” </p>
+<p>龙珠仓库<br>ql repo <a href="https://github.com/longzhuzhu/nianyu.git">https://github.com/longzhuzhu/nianyu.git</a> “qx” “main” </p>
+</li>
+<li><h2 id="目前用的脚本库"><a href="#目前用的脚本库" class="headerlink" title="目前用的脚本库:"></a>目前用的脚本库:</h2><ol>
+<li><a href="https://github.com/shufflewzc/faker3.git">https://github.com/shufflewzc/faker3.git</a></li>
+<li><a href="https://github.com/shufflewzc/faker2.git">https://github.com/shufflewzc/faker2.git</a></li>
+<li><a href="https://github.com/Aaron-lv/sync.git">https://github.com/Aaron-lv/sync.git</a></li>
+<li><a href="https://github.com/6dylan6/jdpro.git">https://github.com/6dylan6/jdpro.git</a></li>
+<li><a href="https://github.com/JDHelloWorld/jd_scripts.git">https://github.com/JDHelloWorld/jd_scripts.git</a></li>
+<li><a href="https://github.com/KingRan/KR.git">https://github.com/KingRan/KR.git</a></li>
+<li><a href="https://github.com/okyyds/yyds.git">https://github.com/okyyds/yyds.git</a></li>
+<li><a href="https://github.com/okyyds/duck.git">https://github.com/okyyds/duck.git</a></li>
+</ol>
+</li>
+</ol>
 ]]></content>
+      <categories>
+        <category>青龙面板</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>折腾</tag>
+        <tag>青龙面板</tag>
+      </tags>
   </entry>
 </search>
