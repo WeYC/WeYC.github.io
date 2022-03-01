@@ -485,4 +485,11 @@
     <content><![CDATA[<h2 id="Welcome-to-WeYC’s-Blog"><a href="#Welcome-to-WeYC’s-Blog" class="headerlink" title="Welcome to WeYC’s Blog"></a>Welcome to WeYC’s Blog</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">System.out.println(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;Hello World!&quot;)</span><br><span class="line"></span><br><span class="line">echo &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>Hello Hexo</title>
+    <url>/posts/6/Hello-Hexo/</url>
+    <content><![CDATA[ <span id="more"></span>
+
+]]></content>
+  </entry>
 </search>
