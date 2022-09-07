@@ -353,8 +353,27 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo文章内嵌HTML页面实例</title>
+    <url>/posts/4/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
+    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
+
+
+
+ <span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo笔记</title>
-    <url>/posts/4/hexo%E7%AC%94%E8%AE%B0/</url>
+    <url>/posts/5/hexo%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​        Hexo的使用笔记</p>
 <h2 id="基本配置："><a href="#基本配置：" class="headerlink" title="基本配置："></a>基本配置：</h2><p>​        配置文件_config.yml</p>
 <h2 id="写作："><a href="#写作：" class="headerlink" title="写作："></a>写作：</h2><ul>
@@ -449,25 +468,6 @@
       <tags>
         <tag>学习</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo文章内嵌HTML页面实例</title>
-    <url>/posts/5/hexo%E6%96%87%E7%AB%A0%E5%86%85%E5%B5%8CHTML%E9%A1%B5%E9%9D%A2%E5%AE%9E%E4%BE%8B/</url>
-    <content><![CDATA[<h6 id="使用iframe标签内嵌HTML页面。"><a href="#使用iframe标签内嵌HTML页面。" class="headerlink" title="使用iframe标签内嵌HTML页面。"></a>使用iframe标签内嵌HTML页面。</h6><iframe src="https://weyc.github.io/live2d-widget/" width="100%" height="600" frameborder="0"></iframe>
-
-
-
- <span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>HTML</category>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
