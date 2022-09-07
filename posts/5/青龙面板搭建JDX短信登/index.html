@@ -23,21 +23,22 @@
     var CONFIG = {"hostname":"blog.weovo.cf","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一、与GitHub建立连接 配置Git 首先在本地创建ssh key； 1$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;  后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~&#x2F;下生成.ssh文件夹，进去，打开id_r">
+  <meta name="description" content="JDX地址 安装说明本项目已打包成docker镜像，拉取配置即可使用 1.🐋拉取并运行docker123456docker run -d \    # 配置文件生成路径    -v &lt;config dir&gt;:&#x2F;jdx&#x2F;config \    -p &lt;port&gt;:80 \    --restart&#x3D;always \    --name jdx registry.cn-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github基本使用">
-<meta property="og:url" content="https://blog.weovo.cf/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="青龙面板搭建JDX短信登">
+<meta property="og:url" content="https://blog.weovo.cf/posts/5/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAJDX%E7%9F%AD%E4%BF%A1%E7%99%BB/index.html">
 <meta property="og:site_name" content="WYC&#39;s Blog">
-<meta property="og:description" content="一、与GitHub建立连接 配置Git 首先在本地创建ssh key； 1$ ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;  后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~&#x2F;下生成.ssh文件夹，进去，打开id_r">
+<meta property="og:description" content="JDX地址 安装说明本项目已打包成docker镜像，拉取配置即可使用 1.🐋拉取并运行docker123456docker run -d \    # 配置文件生成路径    -v &lt;config dir&gt;:&#x2F;jdx&#x2F;config \    -p &lt;port&gt;:80 \    --restart&#x3D;always \    --name jdx registry.cn-">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-10T15:24:40.000Z">
-<meta property="article:modified_time" content="2022-01-10T15:50:17.275Z">
+<meta property="article:published_time" content="2022-03-04T13:58:32.000Z">
+<meta property="article:modified_time" content="2022-03-04T14:14:48.378Z">
 <meta property="article:author" content="WYC">
 <meta property="article:tag" content="学习">
-<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="青龙面板">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://blog.weovo.cf/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="https://blog.weovo.cf/posts/5/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAJDX%E7%9F%AD%E4%BF%A1%E7%99%BB/">
 
 
 <script id="page-configurations">
@@ -50,7 +51,7 @@
   };
 </script>
 
-  <title>Github基本使用 | WYC's Blog</title>
+  <title>青龙面板搭建JDX短信登 | WYC's Blog</title>
   
 
 
@@ -202,7 +203,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.weovo.cf/posts/3/Github%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="https://blog.weovo.cf/posts/5/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BAJDX%E7%9F%AD%E4%BF%A1%E7%99%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.jpg">
@@ -215,7 +216,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Github基本使用
+          青龙面板搭建JDX短信登
         </h1>
 
         <div class="post-meta">
@@ -226,7 +227,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-10 23:24:40 / 修改时间：23:50:17" itemprop="dateCreated datePublished" datetime="2022-01-10T23:24:40+08:00">2022-01-10</time>
+              <time title="创建时间：2022-03-04 21:58:32 / 修改时间：22:14:48" itemprop="dateCreated datePublished" datetime="2022-03-04T21:58:32+08:00">2022-03-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/GitHub/" itemprop="url" rel="index"><span itemprop="name">GitHub</span></a>
+                  <a href="/categories/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/" itemprop="url" rel="index"><span itemprop="name">青龙面板</span></a>
                 </span>
             </span>
 
@@ -256,36 +257,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="一、与GitHub建立连接"><a href="#一、与GitHub建立连接" class="headerlink" title="一、与GitHub建立连接"></a>一、与GitHub建立连接</h2><ul>
-<li><p>配置Git</p>
-<p>首先在本地创建<code>ssh key；</code></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
+         <span id="more"></span>
 
-<p>后面的<code>your_email@youremail.com</code>改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在<code>~/</code>下生成<code>.ssh</code>文件夹，进去，打开<code>id_rsa.pub</code>，复制里面的<code>key</code>。</p>
-<p>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://github.com/wangyiidii/jdx">JDX地址</a></p>
+<h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><p>本项目已打包成<code>docker</code>镜像，拉取配置即可使用</p>
+<h3 id="1-🐋拉取并运行docker"><a href="#1-🐋拉取并运行docker" class="headerlink" title="1.🐋拉取并运行docker"></a>1.🐋拉取并运行docker</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    # 配置文件生成路径</span><br><span class="line">    -v &lt;config dir&gt;:/jdx/config \</span><br><span class="line">    -p &lt;port&gt;:80 \</span><br><span class="line">    --restart=always \</span><br><span class="line">    --name jdx registry.cn-hangzhou.aliyuncs.com/yiidii-hub/jdx:v0.2.1</span><br></pre></td></tr></table></figure>
 
-<p>为了验证是否成功，在git bash下输入：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
-<p>接下来我们要做的就是把本地仓库传到github上去，在此之前还需要设置username和email，因为github每次commit都会记录他们。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your_email@youremail.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二、上传代码到仓库"><a href="#二、上传代码到仓库" class="headerlink" title="二、上传代码到仓库"></a>二、上传代码到仓库</h2><ul>
-<li>…or create a new repository on the command line<br><code>git init</code><br><code>git add README.md</code><br><code>git commit -m &quot;first commit&quot;</code><br><code>git branch -M main</code><br><code>git remote add origin 仓库链接地址</code><br><code>git push -u origin main</code></li>
-<li>…or push an existing repository from the command line<br><code>git remote add origin 仓库链接地址</code><br><code>git branch -M main</code><br><code>git push -u origin main</code></li>
-</ul>
-<ol>
-<li><code>git init</code> 初始化本地仓库</li>
-<li><code>git add . or git add *</code> 添加要上传的文件</li>
-<li><code>git commit -m &quot;first commit&quot;</code> 添加更新说明</li>
-<li><code>git remote add origin 仓库链接地址</code> 把文件放到暂存区</li>
-<li><code>git branch -M main</code> 更改分支</li>
-<li><code>git push -u origin main</code> 上传、</li>
-<li>二次上传需要执行 <code>git add .</code> and <code>git commit -m &quot;first commit&quot;</code> 然后 <code>git push -u origin main</code></li>
-<li>如果仓库已有代码发生改变，需要先<code>git pull</code> 拉取更新，更新本地文件与仓库一直，再执行7.步骤</li>
+<blockquote>
+<p>这里命令自行替换卷和端口映射</p>
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">docker run -d \</span></span><br><span class="line"><span class="language-bash"> -v  /data/jdx/config:/jdx/config \</span></span><br><span class="line"><span class="language-bash"> -p 5702:80 \</span></span><br><span class="line"><span class="language-bash"> --restart=always \</span></span><br><span class="line"><span class="language-bash"> --name jdx registry.cn-hangzhou.aliyuncs.com/yiidii-hub/jdx:v0.2.1</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>注意：</p>
+<ul>
+<li><p>记得放行端口</p>
+</li>
+<li><ol start="2">
+<li>访问</li>
 </ol>
+<p>这时候访问 <code>http://ip:port/</code> 就能访问了</p>
+<h3 id="3-后台登录"><a href="#3-后台登录" class="headerlink" title="3. 后台登录"></a>3. 后台登录</h3><p>访问 <code>http://ip:port/admin</code> 首次登录用户名：<code>admin</code>, 密码：<code>123465</code>, <strong>千万记得修改密码！！！！！</strong></p>
+<h2 id="📃-使用说明"><a href="#📃-使用说明" class="headerlink" title="📃 使用说明"></a>📃 使用说明</h2><ol>
+<li>QL配置只能删除和新增，不能编辑操作</li>
+<li>所有涉及编辑和删除的操作，左滑即可（就像微信删除最近联系人一样…）</li>
+</ol>
+<h2 id="📌-一对一推送"><a href="#📌-一对一推送" class="headerlink" title="📌 一对一推送"></a>📌 一对一推送</h2><p>脚本参考<a target="_blank" rel="noopener" href="https://github.com/ccwav/QLScript2">ccwav/QLScript2</a> 即可</p>
+<p><strong>用户的uid扫码即可自动填充到备注上，需要在wPusher配置（wxPusher后台 -&gt; 应用管理 -&gt; 应用信息 -&gt; 事件回调地址）如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ip:port/api/third/wxPusher/follow/callback</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 
@@ -296,7 +295,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"># 学习</a>
-              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/" rel="tag"># 青龙面板</a>
           </div>
 
         
@@ -305,12 +305,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/5/particlesJS/" rel="prev" title="particlesJS HTML动态背景特效">
-      <i class="fa fa-chevron-left"></i> particlesJS HTML动态背景特效
+    <a href="/posts/5/%E9%9D%92%E9%BE%99%E9%9D%A2%E6%9D%BF/" rel="prev" title="青龙面板">
+      <i class="fa fa-chevron-left"></i> 青龙面板
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2/Eruda-%E6%89%8B%E6%9C%BA%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E9%9D%A2%E6%9D%BF/" rel="next" title="Eruda 手机网页前端调试面板">
-      Eruda 手机网页前端调试面板 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/4/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -370,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%8EGitHub%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">一、与GitHub建立连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81%E5%88%B0%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">二、上传代码到仓库</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">安装说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%F0%9F%90%8B%E6%8B%89%E5%8F%96%E5%B9%B6%E8%BF%90%E8%A1%8Cdocker"><span class="nav-number">1.1.</span> <span class="nav-text">1.🐋拉取并运行docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%90%8E%E5%8F%B0%E7%99%BB%E5%BD%95"><span class="nav-number">1.2.</span> <span class="nav-text">3. 后台登录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%83-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">📃 使用说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8C-%E4%B8%80%E5%AF%B9%E4%B8%80%E6%8E%A8%E9%80%81"><span class="nav-number">3.</span> <span class="nav-text">📌 一对一推送</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
